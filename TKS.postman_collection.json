@@ -1,0 +1,1170 @@
+{
+	"info": {
+		"_postman_id": "d36ebf14-77e3-47bf-b5a2-35894d124cad",
+		"name": "TKS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39339157"
+	},
+	"item": [
+		{
+			"name": "auth/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Maciek\",\n    \"lastName\": \"Kowalski\",\n    \"login\": \"Test1\",\n    \"password\": \"Kowal\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"login\": \"Test1\",\n    \"password\": \"Kowal\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/login Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiVGVzdDEiLCJTU0JEIjoicmVhZHkiLCJleHAiOjE3NDE0NDQzODEsImlhdCI6MTc0MTQ0MTk4MSwic2NvcGUiOiJST0xFX0NMSUVOVCJ9.ZiGdvNHILjVKfb994h7HknS-EgY_Ur5v6wg9VcIGl9EKjPiXiSTvsrDDRprCSBQ0z-ZUVd02_qWj3SG9QEKlRrUCdaR8IYc2ndRtuxhftOCsSVOLDYUFamQl1FxEhO-EsGvuWMbGqzAG8Zxaup_DxU4S6zAwkiN6yNlXXw_4ZhXtTQ1Vsg-k84x1KaNTt3incHD7-DzsvtlVFjn2WxFaacc_gt3-UorULPK7MFtDdppjf4yh-jTQXPylnSS6tunOSvU_Qg-xrRAUDCHf4QovvkAGOOZlcLaWM78Xr2MOJsIisYUvrWzADvwU7Fjea-MmvzqnQtBmHt1v8SMmpRW8Zg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/reset-password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiVGVzdDEyMyIsIlNTQkQiOiJyZWFkeSIsImV4cCI6MTc0MTM3NTY0MywiaWF0IjoxNzQxMzczMjQzLCJzY29wZSI6IlJPTEVfQ0xJRU5UIn0.FNCi3E-qqwdkcMWJ8yUGBrDULrI-dR5YwxAWzpoucRsrfhW63nG7wENOhxqsLn7pA6CHw6qoBj6MI92gStC_Rpr51COMSyqawK6qHqq7ShELFdWXTGiJQ8yGLg2ELLTbjgVuPKFGAmKb_pmuz_nlLdqb8lIYOvzvXzN2qiohNaJ_7YIRrKyi061ugr6RFTaIuCG--Md7YwZ5WkETL_a8LLBIV7xp7QGUZFwkgYEokZpOuwIk5bM0Lu_mFv-iX_6oGHHfXJtSnbjlTM7n5AhDChCni_obTvwODjD0pzv599tHABC011MT8J20UGl6CGWTuDZorSeaRtIATKFwpPItRg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"currentPassword\": \"Kowal1\",\n    \"newPassword\": \"Kowal\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/reset-password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"reset-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "accounts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiVGVzdDEiLCJTU0JEIjoicmVhZHkiLCJleHAiOjE3NDE0NTA5MzksImlhdCI6MTc0MTQ0ODUzOSwic2NvcGUiOiJST0xFX0NMSUVOVCJ9.S41RP7jTSNddSyp2J6vP2xCR4Wg3ASt4PUHyeiQSumVeLArSErNo1UNj3Eu2VYcUs4FbAZdK8EdH32YlaN3yBCHbC7r_oaj9h-CoKkgv_e-D9NI7BeCqkcGidrhmmEz9J0mNZxYw1MSIFiqXfgtkWtP53iiFZw0fWzefI9dhmAfztiu3dVOtRfEBufADtmcSuuSLGra-rw-sTvP7nP54yHg1VBl4jzwDuSaQ4fU3whDtvNljuRdWfnl6uFe1Zid1RUIplovka0x86_YzfLa2tpAEdQjGnlw21Rajf2o5wCMYAG73h1-cHQGEjjckuX2BjzfTrjMfuiVDDv7qcHRS2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"accounts"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "accounts/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiVGVzdDEiLCJTU0JEIjoicmVhZHkiLCJleHAiOjE3NDEzODUyMTIsImlhdCI6MTc0MTM4MjgxMiwic2NvcGUiOiJST0xFX0NMSUVOVCJ9.CMRX-6Bi4MDMSx0imT5ajRnJjv5MPmcAp-jdbsJCMr6TWahGTkwnvp_1ccy7jXKEVskLv1dj-yorNFzMLQFayHFkxJemtENqiqtPMWHssXyitfcAR7EYkVzuVimnxZx0L3Rk8hEXqYC0EB3rMhN32jVmPDuN0qIQ0WvcFswZb7kRPnPE56EOEpiZtx45Ez9pRYPPAaW0TfXuPmklIzJRxRPPK2U0YXYEgKPTqRILZ2U4giRE7rehhlw-aHPuwtz8_E3QsJkrOvZGMGZpEUlewLb56M9LHDwz5hvRjl61_9HQQ4jjaSzOqhDyRCDiQbtUDHdkQb1Y1tcTWRiJdPRleg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/accounts/67cb5f239fd7864b381c2ca0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"accounts",
+						"67cb5f239fd7864b381c2ca0"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "accounts/by-login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiVGVzdDEiLCJTU0JEIjoicmVhZHkiLCJleHAiOjE3NDEzODUyMTIsImlhdCI6MTc0MTM4MjgxMiwic2NvcGUiOiJST0xFX0NMSUVOVCJ9.CMRX-6Bi4MDMSx0imT5ajRnJjv5MPmcAp-jdbsJCMr6TWahGTkwnvp_1ccy7jXKEVskLv1dj-yorNFzMLQFayHFkxJemtENqiqtPMWHssXyitfcAR7EYkVzuVimnxZx0L3Rk8hEXqYC0EB3rMhN32jVmPDuN0qIQ0WvcFswZb7kRPnPE56EOEpiZtx45Ez9pRYPPAaW0TfXuPmklIzJRxRPPK2U0YXYEgKPTqRILZ2U4giRE7rehhlw-aHPuwtz8_E3QsJkrOvZGMGZpEUlewLb56M9LHDwz5hvRjl61_9HQQ4jjaSzOqhDyRCDiQbtUDHdkQb1Y1tcTWRiJdPRleg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/accounts/by-login?login=Test1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"accounts",
+						"by-login"
+					],
+					"query": [
+						{
+							"key": "login",
+							"value": "Test1234"
+						}
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "accounts/search",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiVGVzdDEiLCJTU0JEIjoicmVhZHkiLCJleHAiOjE3NDEzODUyMTIsImlhdCI6MTc0MTM4MjgxMiwic2NvcGUiOiJST0xFX0NMSUVOVCJ9.CMRX-6Bi4MDMSx0imT5ajRnJjv5MPmcAp-jdbsJCMr6TWahGTkwnvp_1ccy7jXKEVskLv1dj-yorNFzMLQFayHFkxJemtENqiqtPMWHssXyitfcAR7EYkVzuVimnxZx0L3Rk8hEXqYC0EB3rMhN32jVmPDuN0qIQ0WvcFswZb7kRPnPE56EOEpiZtx45Ez9pRYPPAaW0TfXuPmklIzJRxRPPK2U0YXYEgKPTqRILZ2U4giRE7rehhlw-aHPuwtz8_E3QsJkrOvZGMGZpEUlewLb56M9LHDwz5hvRjl61_9HQQ4jjaSzOqhDyRCDiQbtUDHdkQb1Y1tcTWRiJdPRleg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "login",
+						"value": "Test1234",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/accounts/search?regex=Test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"accounts",
+						"search"
+					],
+					"query": [
+						{
+							"key": "regex",
+							"value": "Test"
+						}
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "accounts/toggle-status",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiVGVzdDEiLCJTU0JEIjoicmVhZHkiLCJleHAiOjE3NDEzODUyMTIsImlhdCI6MTc0MTM4MjgxMiwic2NvcGUiOiJST0xFX0NMSUVOVCJ9.CMRX-6Bi4MDMSx0imT5ajRnJjv5MPmcAp-jdbsJCMr6TWahGTkwnvp_1ccy7jXKEVskLv1dj-yorNFzMLQFayHFkxJemtENqiqtPMWHssXyitfcAR7EYkVzuVimnxZx0L3Rk8hEXqYC0EB3rMhN32jVmPDuN0qIQ0WvcFswZb7kRPnPE56EOEpiZtx45Ez9pRYPPAaW0TfXuPmklIzJRxRPPK2U0YXYEgKPTqRILZ2U4giRE7rehhlw-aHPuwtz8_E3QsJkrOvZGMGZpEUlewLb56M9LHDwz5hvRjl61_9HQQ4jjaSzOqhDyRCDiQbtUDHdkQb1Y1tcTWRiJdPRleg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "login",
+						"value": "Test1234",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/accounts/67cb5f239fd7864b381c2ca0/toggle-status?isActive=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"accounts",
+						"67cb5f239fd7864b381c2ca0",
+						"toggle-status"
+					],
+					"query": [
+						{
+							"key": "isActive",
+							"value": "true"
+						}
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "games",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiVGVzdDEiLCJTU0JEIjoicmVhZHkiLCJleHAiOjE3NDE0NTA5MzksImlhdCI6MTc0MTQ0ODUzOSwic2NvcGUiOiJST0xFX0NMSUVOVCJ9.S41RP7jTSNddSyp2J6vP2xCR4Wg3ASt4PUHyeiQSumVeLArSErNo1UNj3Eu2VYcUs4FbAZdK8EdH32YlaN3yBCHbC7r_oaj9h-CoKkgv_e-D9NI7BeCqkcGidrhmmEz9J0mNZxYw1MSIFiqXfgtkWtP53iiFZw0fWzefI9dhmAfztiu3dVOtRfEBufADtmcSuuSLGra-rw-sTvP7nP54yHg1VBl4jzwDuSaQ4fU3whDtvNljuRdWfnl6uFe1Zid1RUIplovka0x86_YzfLa2tpAEdQjGnlw21Rajf2o5wCMYAG73h1-cHQGEjjckuX2BjzfTrjMfuiVDDv7qcHRS2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Chess\",\n    \"pricePerDay\": 5,\n    \"minPlayers\": 2,\n    \"maxPlayers\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/games",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"games"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "games/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiVGVzdDEiLCJTU0JEIjoicmVhZHkiLCJleHAiOjE3NDE0NDQzODEsImlhdCI6MTc0MTQ0MTk4MSwic2NvcGUiOiJST0xFX0NMSUVOVCJ9.ZiGdvNHILjVKfb994h7HknS-EgY_Ur5v6wg9VcIGl9EKjPiXiSTvsrDDRprCSBQ0z-ZUVd02_qWj3SG9QEKlRrUCdaR8IYc2ndRtuxhftOCsSVOLDYUFamQl1FxEhO-EsGvuWMbGqzAG8Zxaup_DxU4S6zAwkiN6yNlXXw_4ZhXtTQ1Vsg-k84x1KaNTt3incHD7-DzsvtlVFjn2WxFaacc_gt3-UorULPK7MFtDdppjf4yh-jTQXPylnSS6tunOSvU_Qg-xrRAUDCHf4QovvkAGOOZlcLaWM78Xr2MOJsIisYUvrWzADvwU7Fjea-MmvzqnQtBmHt1v8SMmpRW8Zg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Chess\",\n    \"pricePerDay\": 5,\n    \"minPlayers\": 2,\n    \"maxPlayers\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/games/d6f2b389-0ac2-4535-9a14-efacd253c571",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"games",
+						"d6f2b389-0ac2-4535-9a14-efacd253c571"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "games",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiVGVzdDEiLCJTU0JEIjoicmVhZHkiLCJleHAiOjE3NDE0NTA5MzksImlhdCI6MTc0MTQ0ODUzOSwic2NvcGUiOiJST0xFX0NMSUVOVCJ9.S41RP7jTSNddSyp2J6vP2xCR4Wg3ASt4PUHyeiQSumVeLArSErNo1UNj3Eu2VYcUs4FbAZdK8EdH32YlaN3yBCHbC7r_oaj9h-CoKkgv_e-D9NI7BeCqkcGidrhmmEz9J0mNZxYw1MSIFiqXfgtkWtP53iiFZw0fWzefI9dhmAfztiu3dVOtRfEBufADtmcSuuSLGra-rw-sTvP7nP54yHg1VBl4jzwDuSaQ4fU3whDtvNljuRdWfnl6uFe1Zid1RUIplovka0x86_YzfLa2tpAEdQjGnlw21Rajf2o5wCMYAG73h1-cHQGEjjckuX2BjzfTrjMfuiVDDv7qcHRS2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Chess\",\n    \"pricePerDay\": 5,\n    \"minPlayers\": 2,\n    \"maxPlayers\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/games",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"games"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "games/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiVGVzdDEyMyIsIlNTQkQiOiJyZWFkeSIsImV4cCI6MTc0MTM3NzMzOSwiaWF0IjoxNzQxMzc0OTM5LCJzY29wZSI6IlJPTEVfQ0xJRU5UIn0.W0Q8xS-0dEEnZn4Hp8KaUsnJf8fcZbm2Q0YjyVNI-57b9K-u969BPvz5d12lxCr5ie56Of7ckByS4GzU3yp76KKEBp5KnywAHIxq1UAFMko2rH17Tlj2REaJvJEDZjjZsZrE45ojemHqCxgb_XGLqiRuFOHpa4Y43BMq9p_k5cY-PJ13yfUfaBVaUCkKcyx6Wtownd_0EVYoarBMYAeDG-Mk8KQ7mP53Kb8-B8UXRgLJHRu-reN28V9xPhngngxYFFmHjidEQ4QauqsHJ7M5ySDeHDv6nO9UDmGqMjGI3EmT-f5FYb7Zy8rdVqlgmEmc-ps_OKho_pVZcbbf9vChzQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"67cb473c1bc8ee41b83700dd\",\n\t\"name\": \"Chesss\",\n    \"pricePerDay\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/games",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"games"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "games/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiVGVzdDEiLCJTU0JEIjoicmVhZHkiLCJleHAiOjE3NDE0NTA5MzksImlhdCI6MTc0MTQ0ODUzOSwic2NvcGUiOiJST0xFX0NMSUVOVCJ9.S41RP7jTSNddSyp2J6vP2xCR4Wg3ASt4PUHyeiQSumVeLArSErNo1UNj3Eu2VYcUs4FbAZdK8EdH32YlaN3yBCHbC7r_oaj9h-CoKkgv_e-D9NI7BeCqkcGidrhmmEz9J0mNZxYw1MSIFiqXfgtkWtP53iiFZw0fWzefI9dhmAfztiu3dVOtRfEBufADtmcSuuSLGra-rw-sTvP7nP54yHg1VBl4jzwDuSaQ4fU3whDtvNljuRdWfnl6uFe1Zid1RUIplovka0x86_YzfLa2tpAEdQjGnlw21Rajf2o5wCMYAG73h1-cHQGEjjckuX2BjzfTrjMfuiVDDv7qcHRS2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Chess\",\n    \"pricePerDay\": 5,\n    \"minPlayers\": 2,\n    \"maxPlayers\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/games/d6f2b389-0ac2-4535-9a14-efacd253c571",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"games",
+						"d6f2b389-0ac2-4535-9a14-efacd253c571"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "rents",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiVGVzdDEiLCJTU0JEIjoicmVhZHkiLCJleHAiOjE3NDE0NTA5MzksImlhdCI6MTc0MTQ0ODUzOSwic2NvcGUiOiJST0xFX0NMSUVOVCJ9.S41RP7jTSNddSyp2J6vP2xCR4Wg3ASt4PUHyeiQSumVeLArSErNo1UNj3Eu2VYcUs4FbAZdK8EdH32YlaN3yBCHbC7r_oaj9h-CoKkgv_e-D9NI7BeCqkcGidrhmmEz9J0mNZxYw1MSIFiqXfgtkWtP53iiFZw0fWzefI9dhmAfztiu3dVOtRfEBufADtmcSuuSLGra-rw-sTvP7nP54yHg1VBl4jzwDuSaQ4fU3whDtvNljuRdWfnl6uFe1Zid1RUIplovka0x86_YzfLa2tpAEdQjGnlw21Rajf2o5wCMYAG73h1-cHQGEjjckuX2BjzfTrjMfuiVDDv7qcHRS2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"startDate\": \"2024-11-23\",\n    \"endDate\": \"2024-11-30\",\n    \"gameId\": \"519ce3f2-4348-42ae-a99d-f1a423e132ac\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/rents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rents"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "rents",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiVGVzdDEiLCJTU0JEIjoicmVhZHkiLCJleHAiOjE3NDE0NTA5MzksImlhdCI6MTc0MTQ0ODUzOSwic2NvcGUiOiJST0xFX0NMSUVOVCJ9.S41RP7jTSNddSyp2J6vP2xCR4Wg3ASt4PUHyeiQSumVeLArSErNo1UNj3Eu2VYcUs4FbAZdK8EdH32YlaN3yBCHbC7r_oaj9h-CoKkgv_e-D9NI7BeCqkcGidrhmmEz9J0mNZxYw1MSIFiqXfgtkWtP53iiFZw0fWzefI9dhmAfztiu3dVOtRfEBufADtmcSuuSLGra-rw-sTvP7nP54yHg1VBl4jzwDuSaQ4fU3whDtvNljuRdWfnl6uFe1Zid1RUIplovka0x86_YzfLa2tpAEdQjGnlw21Rajf2o5wCMYAG73h1-cHQGEjjckuX2BjzfTrjMfuiVDDv7qcHRS2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Chess\",\n    \"pricePerDay\": 5,\n    \"minPlayers\": 2,\n    \"maxPlayers\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/rents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rents"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "rents/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiVGVzdDEiLCJTU0JEIjoicmVhZHkiLCJleHAiOjE3NDE0NDY4MzYsImlhdCI6MTc0MTQ0NDQzNiwic2NvcGUiOiJST0xFX0NMSUVOVCJ9.LJEqs4gRnNnh8nDoTeG_vloIMgy5wOgslD8CC1z8UiVAJNQGxggA1Asn2BhUIayNYRp-TNn-3bErKcZ4IhpW1zrPfQDBsadRRaHUTOqCYDYKp6H4jtc5FSNwjnCT9Htif3OVtOILnd1coRVoyscXURHHRxI9nHSFNgV9XaEFsitN2yPyxzy4zaJT8Si5Qlj0MDno2-DoJlpPfs6jQ9OeuCVu-AoAD5N6vWScVtUDTLq8Isr9mSMUCSPyTFTd3PS1sVab4tMeKR-uA3FlvQzi5AK8vXSewXE_LoEjv_6x8Xyq6F2UAeVpi9YGsKH1YS5n9_luv2Q_ucKP5-Yn8DRYYg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/rents/240f200a-a305-46a7-aaf1-42803336be77",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rents",
+						"240f200a-a305-46a7-aaf1-42803336be77"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "rents/client/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiVGVzdDEiLCJTU0JEIjoicmVhZHkiLCJleHAiOjE3NDE0NDY4MzYsImlhdCI6MTc0MTQ0NDQzNiwic2NvcGUiOiJST0xFX0NMSUVOVCJ9.LJEqs4gRnNnh8nDoTeG_vloIMgy5wOgslD8CC1z8UiVAJNQGxggA1Asn2BhUIayNYRp-TNn-3bErKcZ4IhpW1zrPfQDBsadRRaHUTOqCYDYKp6H4jtc5FSNwjnCT9Htif3OVtOILnd1coRVoyscXURHHRxI9nHSFNgV9XaEFsitN2yPyxzy4zaJT8Si5Qlj0MDno2-DoJlpPfs6jQ9OeuCVu-AoAD5N6vWScVtUDTLq8Isr9mSMUCSPyTFTd3PS1sVab4tMeKR-uA3FlvQzi5AK8vXSewXE_LoEjv_6x8Xyq6F2UAeVpi9YGsKH1YS5n9_luv2Q_ucKP5-Yn8DRYYg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/rents/client/30b51fe1-c6cc-496a-9d89-8f83f039f3a8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rents",
+						"client",
+						"30b51fe1-c6cc-496a-9d89-8f83f039f3a8"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "rents/rents/end",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiVGVzdDEiLCJTU0JEIjoicmVhZHkiLCJleHAiOjE3NDE0NTA5MzksImlhdCI6MTc0MTQ0ODUzOSwic2NvcGUiOiJST0xFX0NMSUVOVCJ9.S41RP7jTSNddSyp2J6vP2xCR4Wg3ASt4PUHyeiQSumVeLArSErNo1UNj3Eu2VYcUs4FbAZdK8EdH32YlaN3yBCHbC7r_oaj9h-CoKkgv_e-D9NI7BeCqkcGidrhmmEz9J0mNZxYw1MSIFiqXfgtkWtP53iiFZw0fWzefI9dhmAfztiu3dVOtRfEBufADtmcSuuSLGra-rw-sTvP7nP54yHg1VBl4jzwDuSaQ4fU3whDtvNljuRdWfnl6uFe1Zid1RUIplovka0x86_YzfLa2tpAEdQjGnlw21Rajf2o5wCMYAG73h1-cHQGEjjckuX2BjzfTrjMfuiVDDv7qcHRS2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/rents/end/71ff6a01-dcb8-4937-a56e-9b2042090b5f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rents",
+						"end",
+						"71ff6a01-dcb8-4937-a56e-9b2042090b5f"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "inactive-rents",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiVGVzdDEiLCJTU0JEIjoicmVhZHkiLCJleHAiOjE3NDE0NTE3NzQsImlhdCI6MTc0MTQ0OTM3NCwic2NvcGUiOiJST0xFX0NMSUVOVCJ9.g43axjOBQWxYGf4NHHKgK75ehYAudcgW3bkourlBWK6OSY3eYxZwQeiH-P555-srV5IeKF_oLVrwCpRugE-f8Rdqwoieb8jvBpebdkLwYgKEPzlb4WiMoNJTWvOGlmErIWSVr41xhuoEnmFxaT7cHw6OWbM17K6PPLqikyXGnY0wOdIRInobhvlxQLwuoDipoqQdbIdwNZ5VoKrNDY2tekGeXPhH-NSp-ojpck8abCkHuT43uw7hrHNtZwZTWGsP1Kby2GEKxLlGp7ujfDe2K9LUSy4OXTXe2nL9KJswB6_m7DDIb0ZGdbNV6QMRaiTWdax-1yL3at8mEQLHqRBecw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Chess\",\n    \"pricePerDay\": 5,\n    \"minPlayers\": 2,\n    \"maxPlayers\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/inactive-rents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"inactive-rents"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "inactive-rents/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiVGVzdDEiLCJTU0JEIjoicmVhZHkiLCJleHAiOjE3NDE0NTE3NzQsImlhdCI6MTc0MTQ0OTM3NCwic2NvcGUiOiJST0xFX0NMSUVOVCJ9.g43axjOBQWxYGf4NHHKgK75ehYAudcgW3bkourlBWK6OSY3eYxZwQeiH-P555-srV5IeKF_oLVrwCpRugE-f8Rdqwoieb8jvBpebdkLwYgKEPzlb4WiMoNJTWvOGlmErIWSVr41xhuoEnmFxaT7cHw6OWbM17K6PPLqikyXGnY0wOdIRInobhvlxQLwuoDipoqQdbIdwNZ5VoKrNDY2tekGeXPhH-NSp-ojpck8abCkHuT43uw7hrHNtZwZTWGsP1Kby2GEKxLlGp7ujfDe2K9LUSy4OXTXe2nL9KJswB6_m7DDIb0ZGdbNV6QMRaiTWdax-1yL3at8mEQLHqRBecw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Chess\",\n    \"pricePerDay\": 5,\n    \"minPlayers\": 2,\n    \"maxPlayers\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/inactive-rents/71ff6a01-dcb8-4937-a56e-9b2042090b5f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"inactive-rents",
+						"71ff6a01-dcb8-4937-a56e-9b2042090b5f"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "rents/client/{id} Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiVGVzdDEiLCJTU0JEIjoicmVhZHkiLCJleHAiOjE3NDE0NTE3NzQsImlhdCI6MTc0MTQ0OTM3NCwic2NvcGUiOiJST0xFX0NMSUVOVCJ9.g43axjOBQWxYGf4NHHKgK75ehYAudcgW3bkourlBWK6OSY3eYxZwQeiH-P555-srV5IeKF_oLVrwCpRugE-f8Rdqwoieb8jvBpebdkLwYgKEPzlb4WiMoNJTWvOGlmErIWSVr41xhuoEnmFxaT7cHw6OWbM17K6PPLqikyXGnY0wOdIRInobhvlxQLwuoDipoqQdbIdwNZ5VoKrNDY2tekGeXPhH-NSp-ojpck8abCkHuT43uw7hrHNtZwZTWGsP1Kby2GEKxLlGp7ujfDe2K9LUSy4OXTXe2nL9KJswB6_m7DDIb0ZGdbNV6QMRaiTWdax-1yL3at8mEQLHqRBecw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/inactive-rents/client/30b51fe1-c6cc-496a-9d89-8f83f039f3a8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"inactive-rents",
+						"client",
+						"30b51fe1-c6cc-496a-9d89-8f83f039f3a8"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		}
+	]
+}

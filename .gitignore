@@ -1,0 +1,16 @@
+.idea
+
+tks/Adapters/RepositoriesAdapters/target
+tks/Adapters/RepositoriesAdapters/.idea
+
+tks/Adapters/ViewRest/target
+tks/Adapters/ViewRest/.idea
+
+tks/ApplicationCore/ApplicationServices/target
+tks/ApplicationCore/ApplicationServices/.idea
+
+tks/ApplicationCore/DomainModel/target
+tks/ApplicationCore/DomainModel/.idea
+
+tks/Applications/RestApi/target
+tks/Applications/RestApi/.idea
