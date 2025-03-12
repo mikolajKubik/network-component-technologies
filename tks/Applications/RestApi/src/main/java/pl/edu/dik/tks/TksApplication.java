@@ -6,6 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {
+		"pl.edu.dik.utils.config",
 		"pl.edu.dik.adapters.config",       // Configurations
 		"pl.edu.dik.adapters",    // Adapters
 		"pl.edu.dik.application.services",  // Service implementations

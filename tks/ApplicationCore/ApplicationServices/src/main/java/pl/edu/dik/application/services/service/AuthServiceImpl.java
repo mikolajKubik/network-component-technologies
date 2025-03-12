@@ -41,14 +41,16 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public Account me(String login) throws
             AccountNotFoundException {
-        return readAuthPort.findByLogin(login).orElseThrow(() -> new AccountNotFoundException("Account not found"));
+        return readAuthPort.findByLogin(login)
+                .orElseThrow(() -> new AccountNotFoundException("Account not found"));
     }
 
 
     @Override
     public String resetPassword(String login, String oldPassword, String newPassword) throws
             AccountNotFoundException, IncorrectPasswordException {
-        Account account = readAuthPort.findByLogin(login).orElseThrow(() -> new AccountNotFoundException("Account not found"));
+        Account account = readAuthPort.findByLogin(login)
+                .orElseThrow(() -> new AccountNotFoundException("Account not found"));
         if (!passwordEncoder.matches(oldPassword, account.getPassword())) {
             throw new IncorrectPasswordException("Incorrect password");
         }

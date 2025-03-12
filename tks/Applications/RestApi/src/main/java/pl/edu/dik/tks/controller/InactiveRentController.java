@@ -8,10 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.edu.dik.application.services.exception.business.RentNotFoundException;
-import pl.edu.dik.application.services.service.InactiveRentServiceImpl;
 import pl.edu.dik.domain.model.rent.Rent;
 import pl.edu.dik.ports.service.InactiveRentService;
-import pl.edu.dik.view.rest.rent.RentResponse;
+import pl.edu.dik.view.model.rent.RentResponse;
 
 
 import java.util.List;

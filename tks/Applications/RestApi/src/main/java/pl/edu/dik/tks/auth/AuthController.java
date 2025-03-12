@@ -14,7 +14,7 @@ import pl.edu.dik.application.services.exception.business.DuplicatedKeyException
 import pl.edu.dik.application.services.exception.business.IncorrectPasswordException;
 import pl.edu.dik.domain.model.account.Account;
 import pl.edu.dik.ports.service.AuthService;
-import pl.edu.dik.view.rest.auth.*;
+import pl.edu.dik.view.model.auth.*;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -27,8 +27,7 @@ public class AuthController {
     private final TokenService tokenService;
 
     @PostMapping("/register")
-    public ResponseEntity<RegisterResponse> register(@RequestBody RegisterRequest registerRequest) throws
-            DuplicatedKeyException {
+    public ResponseEntity<RegisterResponse> register(@RequestBody RegisterRequest registerRequest) {
         Account account = modelMapper.map(registerRequest, Account.class);
         return ResponseEntity.status(HttpStatus.CREATED).body(modelMapper.map(authService.register(account), RegisterResponse.class));
     }

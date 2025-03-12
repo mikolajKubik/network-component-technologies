@@ -1,4 +1,4 @@
-package pl.edu.dik.view.rest.auth;
+package pl.edu.dik.view.model.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,8 +1,6 @@
-package pl.edu.dik.view.rest.auth;
+package pl.edu.dik.view.model.auth;
 
 import lombok.*;
-
-import java.util.UUID;
 
 @Data
 @Getter @Setter

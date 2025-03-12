@@ -22,6 +22,7 @@
 		<module>ApplicationPorts</module>
 		<module>ApplicationCore</module>
 		<module>Applications</module>
+		<module>Utills</module>
 	</modules>
 
 	<properties>

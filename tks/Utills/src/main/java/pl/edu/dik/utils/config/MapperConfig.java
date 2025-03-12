@@ -1,4 +1,4 @@
-package pl.edu.dik.tks.config;
+package pl.edu.dik.utils.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

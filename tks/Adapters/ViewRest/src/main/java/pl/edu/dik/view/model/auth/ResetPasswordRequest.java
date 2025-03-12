@@ -1,4 +1,4 @@
-package pl.edu.dik.view.rest.auth;
+package pl.edu.dik.view.model.auth;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;

@@ -4,28 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>pl.edu.dik.adapters</groupId>
-        <artifactId>Adapters</artifactId>
+        <groupId>pl.edu.dik</groupId>
+        <artifactId>tks</artifactId>
         <version>1.0.0</version>
     </parent>
 
-    <groupId>pl.edu.dik.adapters.repositories</groupId>
-    <artifactId>RepositoriesAdapters</artifactId>
+    <groupId>pl.edu.dik.utils</groupId>
+    <artifactId>Utils</artifactId>
     <version>1.0.0</version>
-
-
-    <dependencies>
-        <dependency>
-            <groupId>pl.edu.dik.applicationports</groupId>
-            <artifactId>ApplicationPorts</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>pl.edu.dik.utils</groupId>
-            <artifactId>Utils</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-    </dependencies>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
