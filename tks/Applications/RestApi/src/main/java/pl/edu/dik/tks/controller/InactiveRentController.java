@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.edu.dik.domain.model.rent.Rent;
 import pl.edu.dik.ports.exception.business.RentNotFoundException;
-import pl.edu.dik.ports.service.InactiveRentService;
+import pl.edu.dik.ports._interface.InactiveRentService;
 import pl.edu.dik.view.model.rent.RentResponse;
 
 

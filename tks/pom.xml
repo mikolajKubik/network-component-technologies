@@ -22,7 +22,7 @@
 		<module>ApplicationPorts</module>
 		<module>ApplicationCore</module>
 		<module>Applications</module>
-		<module>Utills</module>
+		<module>Utils</module>
 	</modules>
 
 	<properties>
@@ -93,13 +93,6 @@
 			<version>5.2.0</version>
 		</dependency>
 
-		<!--        MongoDB -->
-		<dependency>
-			<groupId>org.mongodb</groupId>
-			<artifactId>mongodb-driver-sync</artifactId>
-			<version>5.2.0</version>
-		</dependency>
-
 		<!--        Jakarta Validation -->
 		<dependency>
 			<groupId>org.hibernate.validator</groupId>
@@ -119,19 +112,6 @@
 			<version>3.2.2</version>
 		</dependency>
 
-
-		<!--        MapStruct (DTO mapper) -->
-		<dependency>
-			<groupId>org.mapstruct</groupId>
-			<artifactId>mapstruct</artifactId>
-			<version>1.6.3</version>
-		</dependency>
-		<dependency>
-			<groupId>org.mapstruct</groupId>
-			<artifactId>mapstruct-processor</artifactId>
-			<version>1.6.3</version>
-			<scope>provided</scope>
-		</dependency>
 
 		<!--        LOGGING -->
 		<dependency>
@@ -160,11 +140,6 @@
 			<artifactId>jakarta.servlet-api</artifactId>
 			<version>6.1.0</version>
 			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
 
 		<dependency>

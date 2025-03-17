@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import pl.edu.dik.domain.model.rent.Rent;
 import pl.edu.dik.ports.exception.business.RentNotFoundException;
 import pl.edu.dik.ports.infrastructure.inactiveRent.ReadInactiveRentPort;
-import pl.edu.dik.ports.service.InactiveRentService;
+import pl.edu.dik.ports._interface.InactiveRentService;
 
 
 import java.util.List;

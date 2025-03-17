@@ -1,4 +1,4 @@
-package pl.edu.dik.ports.service;
+package pl.edu.dik.ports._interface;
 
 import pl.edu.dik.domain.model.game.Game;
 import pl.edu.dik.ports.exception.business.GameNotFoundException;

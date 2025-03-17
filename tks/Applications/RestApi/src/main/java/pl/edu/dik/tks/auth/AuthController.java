@@ -13,7 +13,7 @@ import pl.edu.dik.domain.model.account.Account;
 import pl.edu.dik.ports.exception.business.AccountNotFoundException;
 import pl.edu.dik.ports.exception.business.DuplicatedKeyException;
 import pl.edu.dik.ports.exception.business.IncorrectPasswordException;
-import pl.edu.dik.ports.service.AuthService;
+import pl.edu.dik.ports._interface.AuthService;
 import pl.edu.dik.view.model.auth.*;
 
 @RestController

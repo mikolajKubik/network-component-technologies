@@ -8,7 +8,7 @@ import pl.edu.dik.ports.infrastructure.rent.CreateRentPort;
 import pl.edu.dik.ports.infrastructure.rent.DeleteRentPort;
 import pl.edu.dik.ports.infrastructure.rent.ReadRentPort;
 import pl.edu.dik.ports.infrastructure.rent.UpdateRentPort;
-import pl.edu.dik.ports.service.RentService;
+import pl.edu.dik.ports._interface.RentService;
 
 import java.time.LocalDate;
 import java.util.List;

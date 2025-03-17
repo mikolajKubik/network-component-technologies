@@ -11,7 +11,7 @@ import pl.edu.dik.ports.exception.business.IncorrectPasswordException;
 import pl.edu.dik.ports.infrastructure.auth.CreateAuthPort;
 import pl.edu.dik.ports.infrastructure.auth.ReadAuthPort;
 import pl.edu.dik.ports.infrastructure.auth.UpdateAuthPort;
-import pl.edu.dik.ports.service.AuthService;
+import pl.edu.dik.ports._interface.AuthService;
 
 @Service
 @RequiredArgsConstructor

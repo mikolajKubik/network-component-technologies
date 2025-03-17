@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import pl.edu.dik.domain.model.AuthUserDetails;
 import pl.edu.dik.domain.model.account.Account;
 import pl.edu.dik.ports.infrastructure.auth.ReadAuthPort;
-import pl.edu.dik.ports.service.AuthDetailsService;
+import pl.edu.dik.ports._interface.AuthDetailsService;
 
 @Service
 @RequiredArgsConstructor

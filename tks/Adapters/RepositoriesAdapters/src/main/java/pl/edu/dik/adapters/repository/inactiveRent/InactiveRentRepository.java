@@ -1,4 +1,5 @@
 package pl.edu.dik.adapters.repository.inactiveRent;
+
 import pl.edu.dik.adapters.model.rent.RentEnt;
 
 import java.util.List;

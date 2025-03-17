@@ -10,7 +10,7 @@ import pl.edu.dik.ports.infrastructure.game.CreateGamePort;
 import pl.edu.dik.ports.infrastructure.game.DeleteGamePort;
 import pl.edu.dik.ports.infrastructure.game.ReadGamePort;
 import pl.edu.dik.ports.infrastructure.game.UpdateGamePort;
-import pl.edu.dik.ports.service.GameService;
+import pl.edu.dik.ports._interface.GameService;
 
 
 import java.util.List;

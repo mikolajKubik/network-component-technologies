@@ -6,7 +6,7 @@ import pl.edu.dik.domain.model.account.Account;
 import pl.edu.dik.ports.exception.business.AccountNotFoundException;
 import pl.edu.dik.ports.infrastructure.account.ReadAccountPort;
 import pl.edu.dik.ports.infrastructure.account.UpdateAccountPort;
-import pl.edu.dik.ports.service.AccountService;
+import pl.edu.dik.ports._interface.AccountService;
 
 import java.util.List;
 import java.util.UUID;

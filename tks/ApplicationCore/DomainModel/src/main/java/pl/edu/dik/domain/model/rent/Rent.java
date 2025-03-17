@@ -1,7 +1,6 @@
 package pl.edu.dik.domain.model.rent;
 
 import lombok.*;
-import org.bson.codecs.pojo.annotations.BsonProperty;
 import pl.edu.dik.domain.model.account.Account;
 import pl.edu.dik.domain.model.game.Game;
 

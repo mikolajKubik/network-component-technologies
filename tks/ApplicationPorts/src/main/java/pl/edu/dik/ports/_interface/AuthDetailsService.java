@@ -1,4 +1,4 @@
-package pl.edu.dik.ports.service;
+package pl.edu.dik.ports._interface;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

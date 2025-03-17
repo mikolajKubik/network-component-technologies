@@ -1,4 +1,4 @@
-package pl.edu.dik.ports.service;
+package pl.edu.dik.ports._interface;
 
 import pl.edu.dik.domain.model.rent.Rent;
 import pl.edu.dik.ports.exception.business.RentNotFoundException;
