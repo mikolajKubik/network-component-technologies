@@ -1,6 +1,7 @@
-package pl.edu.dik.application.services.exception.business;
+package pl.edu.dik.ports.exception.business;
 
-import pl.edu.dik.application.services.exception.ConflictException;
+
+import pl.edu.dik.ports.exception.ConflictException;
 
 public class IncorrectPasswordException extends ConflictException {
     public IncorrectPasswordException(String message) {

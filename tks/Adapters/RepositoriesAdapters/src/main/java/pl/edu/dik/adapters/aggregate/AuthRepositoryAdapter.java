@@ -3,9 +3,11 @@ package pl.edu.dik.adapters.aggregate;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
+import pl.edu.dik.adapters.exception.DuplicatedKeyRepositoryException;
 import pl.edu.dik.adapters.model.account.AccountEnt;
 import pl.edu.dik.adapters.repository.auth.AuthRepository;
 import pl.edu.dik.domain.model.account.Account;
+import pl.edu.dik.ports.exception.business.DuplicatedKeyException;
 import pl.edu.dik.ports.infrastructure.auth.CreateAuthPort;
 import pl.edu.dik.ports.infrastructure.auth.ReadAuthPort;
 import pl.edu.dik.ports.infrastructure.auth.UpdateAuthPort;
@@ -20,8 +22,12 @@ public class AuthRepositoryAdapter implements CreateAuthPort, ReadAuthPort, Upda
     private final ModelMapper modelMapper;
 
     @Override
-    public Account save(Account object) {
-        return modelMapper.map(authRepository.save(modelMapper.map(object, AccountEnt.class)), Account.class);
+    public Account save(Account object) throws DuplicatedKeyException {
+        try {
+            return modelMapper.map(authRepository.save(modelMapper.map(object, AccountEnt.class)), Account.class);
+        } catch (DuplicatedKeyRepositoryException e) {
+            throw new DuplicatedKeyException(e.getMessage());
+        }
     }
 
     @Override

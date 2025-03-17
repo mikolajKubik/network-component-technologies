@@ -1,8 +1,6 @@
 package pl.edu.dik.adapters.repository.rent;
 
-import pl.edu.dik.adapters.exception.ClientNotAvailableForRentRepositoryException;
-import pl.edu.dik.adapters.exception.GameNotAvailableForRentRepositoryException;
-import pl.edu.dik.adapters.exception.RentNotFoundRepositoryException;
+import pl.edu.dik.adapters.exception.*;
 import pl.edu.dik.adapters.model.rent.RentEnt;
 
 import java.time.LocalDate;
@@ -26,7 +24,8 @@ public interface RentRepository {
     void deleteById(Object id) throws
             GameNotAvailableForRentRepositoryException,
             ClientNotAvailableForRentRepositoryException,
-            RentNotFoundRepositoryException;
+            RentNotFoundRepositoryException,
+            ClientRentCancellationRepositoryException, GameRentCancellationRepositoryException;
 
     List<RentEnt> getRentsByAccountId(UUID clientId);
 }

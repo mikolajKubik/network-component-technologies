@@ -5,9 +5,9 @@ import org.springframework.http.ProblemDetail;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-import pl.edu.dik.application.services.exception.BadRequestException;
-import pl.edu.dik.application.services.exception.ConflictException;
-import pl.edu.dik.application.services.exception.NotFoundException;
+import pl.edu.dik.ports.exception.BadRequestException;
+import pl.edu.dik.ports.exception.ConflictException;
+import pl.edu.dik.ports.exception.NotFoundException;
 
 @RestControllerAdvice
 public class AppExceptionHandler extends ResponseEntityExceptionHandler {

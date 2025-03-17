@@ -8,10 +8,7 @@ import com.mongodb.client.model.Filters;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.springframework.stereotype.Repository;
-import pl.edu.dik.adapters.exception.ClientNotAvailableForRentRepositoryException;
-import pl.edu.dik.adapters.exception.ClientRentCancellationRepositoryException;
-import pl.edu.dik.adapters.exception.GameNotAvailableForRentRepositoryException;
-import pl.edu.dik.adapters.exception.RentNotFoundRepositoryException;
+import pl.edu.dik.adapters.exception.*;
 import pl.edu.dik.adapters.model.account.AccountEnt;
 import pl.edu.dik.adapters.model.game.GameEnt;
 import pl.edu.dik.adapters.model.rent.RentEnt;
@@ -111,20 +108,20 @@ public class MongoRentRepository implements RentRepository {
 
     @Override
     public void deleteById(Object id) throws
-            GameNotAvailableForRentRepositoryException,
-            ClientRentCancellationRepositoryException,
-            RentNotFoundRepositoryException {
+            GameRentCancellationRepositoryException,
+            RentNotFoundRepositoryException,
+            ClientRentCancellationRepositoryException {
         RentEnt rent = findById(id).orElseThrow(() -> new RentNotFoundRepositoryException("Rent not found"));
 
         ClientSession session = mongoClient.startSession();
         try {
             session.startTransaction();
             if (!unmarkAccountAsRented(session, rent.getAccount().getId())) {
-                throw new ClientNotAvailableForRentRepositoryException("Client is not available for rent or does not exist.");
+                throw new ClientRentCancellationRepositoryException("Client rent cancellation failed.");
             }
 
             if (!unmarkGameAsRented(session, rent.getGame().getId())) {
-                throw new GameNotAvailableForRentRepositoryException("Game is not available for rent or does not exist.");
+                throw new GameRentCancellationRepositoryException("Game rent cancellation failed.");
             }
 
             rent.setEndDate(LocalDate.now());

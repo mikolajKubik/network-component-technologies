@@ -3,12 +3,11 @@ package pl.edu.dik.application.services.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import pl.edu.dik.adapters.exception.DuplicatedKeyRepositoryException;
-import pl.edu.dik.application.services.exception.business.AccountNotFoundException;
-import pl.edu.dik.application.services.exception.business.DuplicatedKeyException;
-import pl.edu.dik.application.services.exception.business.IncorrectPasswordException;
 import pl.edu.dik.domain.model.account.Account;
 import pl.edu.dik.domain.model.account.Role;
+import pl.edu.dik.ports.exception.business.AccountNotFoundException;
+import pl.edu.dik.ports.exception.business.DuplicatedKeyException;
+import pl.edu.dik.ports.exception.business.IncorrectPasswordException;
 import pl.edu.dik.ports.infrastructure.auth.CreateAuthPort;
 import pl.edu.dik.ports.infrastructure.auth.ReadAuthPort;
 import pl.edu.dik.ports.infrastructure.auth.UpdateAuthPort;
@@ -30,11 +29,7 @@ public class AuthServiceImpl implements AuthService {
         account.setPassword(passwordEncoder.encode(account.getPassword()));
         account.setEnable(true);
         account.setRole(Role.CLIENT);
-        try {
-            return createAuthPort.save(account);
-        } catch (DuplicatedKeyRepositoryException e) {
-            throw new DuplicatedKeyException("Account with this login already exists");
-        }
+        return createAuthPort.save(account);
     }
 
 

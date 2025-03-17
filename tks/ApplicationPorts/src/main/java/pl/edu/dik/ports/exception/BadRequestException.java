@@ -1,4 +1,4 @@
-package pl.edu.dik.application.services.exception;
+package pl.edu.dik.ports.exception;
 
 public class BadRequestException extends AppException {
     public BadRequestException(String message) {

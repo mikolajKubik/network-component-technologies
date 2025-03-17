@@ -1,6 +1,6 @@
-package pl.edu.dik.application.services.exception.business;
+package pl.edu.dik.ports.exception.business;
 
-import pl.edu.dik.application.services.exception.NotFoundException;
+import pl.edu.dik.ports.exception.NotFoundException;
 
 public class RentNotFoundException extends NotFoundException {
     public RentNotFoundException(String message) {

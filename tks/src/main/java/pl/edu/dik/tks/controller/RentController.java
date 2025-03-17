@@ -10,7 +10,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import pl.edu.dik.tks.dto.rent.CreateRentRequest;
 import pl.edu.dik.tks.dto.rent.RentResponse;
-import pl.edu.dik.tks.exception.business.*;
 import pl.edu.dik.tks.model.rent.Rent;
 import pl.edu.dik.tks.service.RentService;
 
