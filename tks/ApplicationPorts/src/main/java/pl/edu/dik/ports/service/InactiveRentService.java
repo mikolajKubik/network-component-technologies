@@ -8,9 +8,9 @@ import java.util.UUID;
 
 public interface InactiveRentService {
 
-    public Rent findInactiveRentById(UUID id) throws RentNotFoundException;
+    Rent findInactiveRentById(UUID id) throws RentNotFoundException;
 
-    public List<Rent> getAllInactiveRents();
+    List<Rent> getAllInactiveRents();
 
-    public List<Rent> getInactiveRentsByClientId(UUID clientId);
+    List<Rent> getInactiveRentsByClientId(UUID clientId);
 }

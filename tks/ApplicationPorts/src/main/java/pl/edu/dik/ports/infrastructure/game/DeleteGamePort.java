@@ -1,7 +1,9 @@
 package pl.edu.dik.ports.infrastructure.game;
 
+import java.util.UUID;
+
 public interface DeleteGamePort {
 
-    void deleteById(Object id);
+    void deleteById(UUID id);
 
 }

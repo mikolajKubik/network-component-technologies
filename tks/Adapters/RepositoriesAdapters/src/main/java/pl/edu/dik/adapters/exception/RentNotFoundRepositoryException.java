@@ -1,6 +1,8 @@
 package pl.edu.dik.adapters.exception;
 
-public class RentNotFoundRepositoryException extends RuntimeException {
+import pl.edu.dik.ports.exception.business.RentNotFoundException;
+
+public class RentNotFoundRepositoryException extends RentNotFoundException {
     public RentNotFoundRepositoryException(String message) {
         super(message);
     }

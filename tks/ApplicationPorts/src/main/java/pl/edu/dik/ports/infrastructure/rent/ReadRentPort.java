@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public interface ReadRentPort {
 
-    Optional<Rent> findById(Object id);
+    Optional<Rent> findById(UUID id);
 
     List<Rent> findAll();
 

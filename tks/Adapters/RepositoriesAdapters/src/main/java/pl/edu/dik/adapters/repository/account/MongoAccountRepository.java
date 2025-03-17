@@ -58,7 +58,7 @@ public class MongoAccountRepository implements AccountRepository {
 
     @Override
     public List<AccountEnt> findByMatchingLogin(String loginSubstring) {
-        Bson filter = regex("login", loginSubstring, "i"); // Remove unnecessary and()
+        Bson filter = regex("login", loginSubstring, "i");
         return StreamSupport.stream(collection.find(filter).spliterator(), false)
                 .collect(Collectors.toList());
     }

@@ -15,4 +15,7 @@ tks/ApplicationCore/DomainModel/.idea
 tks/Applications/RestApi/target
 tks/Applications/RestApi/.idea
 
+tks/ApplicationPorts/target
+tks/ApplicationPorts/.idea
+
 tks/Utills/target

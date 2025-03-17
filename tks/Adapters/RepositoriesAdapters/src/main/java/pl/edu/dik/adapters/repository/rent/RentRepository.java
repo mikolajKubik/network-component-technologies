@@ -22,10 +22,9 @@ public interface RentRepository {
     RentEnt update(RentEnt rent);
 
     void deleteById(Object id) throws
-            GameNotAvailableForRentRepositoryException,
-            ClientNotAvailableForRentRepositoryException,
             RentNotFoundRepositoryException,
-            ClientRentCancellationRepositoryException, GameRentCancellationRepositoryException;
+            ClientRentCancellationRepositoryException,
+            GameRentCancellationRepositoryException;
 
     List<RentEnt> getRentsByAccountId(UUID clientId);
 }
