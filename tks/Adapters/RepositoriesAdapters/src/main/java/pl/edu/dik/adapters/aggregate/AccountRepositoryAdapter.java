@@ -11,6 +11,7 @@ import pl.edu.dik.ports.infrastructure.account.UpdateAccountPort;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 
@@ -27,7 +28,7 @@ public class AccountRepositoryAdapter implements ReadAccountPort, UpdateAccountP
     }
 
     @Override
-    public Optional<Account> findById(Object id) {
+    public Optional<Account> findById(UUID id) {
         return Optional.ofNullable(modelMapper.map(accountRepository.findById(id), Account.class));
     }
 

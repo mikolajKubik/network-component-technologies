@@ -5,10 +5,11 @@ import pl.edu.dik.adapters.model.account.AccountEnt;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 public interface AccountRepository {
 
-    Optional<AccountEnt> findById(Object id);
+    Optional<AccountEnt> findById(UUID id);
 
     AccountEnt update(AccountEnt updatedAccount);
 

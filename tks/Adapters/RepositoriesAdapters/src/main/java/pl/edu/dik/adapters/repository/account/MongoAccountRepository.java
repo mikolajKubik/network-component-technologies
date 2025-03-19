@@ -11,6 +11,7 @@ import pl.edu.dik.adapters.model.account.AccountEnt;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -28,7 +29,7 @@ public class MongoAccountRepository implements AccountRepository {
     }
 
     @Override
-    public Optional<AccountEnt> findById(Object id) {
+    public Optional<AccountEnt> findById(UUID id) {
         Bson filter = Filters.eq("_id", id);
         return Optional.ofNullable(collection.find(filter).first());
     }
@@ -36,7 +37,7 @@ public class MongoAccountRepository implements AccountRepository {
 
     @Override
     public AccountEnt update(AccountEnt updatedAccount) {
-        Object id = updatedAccount.getId();
+        UUID id = updatedAccount.getId();
         Bson filter = Filters.eq("_id", id);
         return collection.replaceOne(filter, updatedAccount).wasAcknowledged() ? updatedAccount : null;
     }
