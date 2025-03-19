@@ -14,23 +14,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>pl.edu.dik.application.services</groupId>
-            <artifactId>ApplicationServices</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
             <groupId>pl.edu.dik.adapters.viewrest</groupId>
             <artifactId>ViewRest</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>pl.edu.dik.applicationports</groupId>
-            <artifactId>ApplicationPorts</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>pl.edu.dik.utils</groupId>
-            <artifactId>Utils</artifactId>
             <version>1.0.0</version>
         </dependency>
     </dependencies>

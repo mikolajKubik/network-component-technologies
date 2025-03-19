@@ -1,16 +1,16 @@
 package pl.edu.dik.application.services.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import pl.edu.dik.domain.model.AuthUserDetails;
 import pl.edu.dik.domain.model.account.Account;
 import pl.edu.dik.ports.infrastructure.auth.ReadAuthPort;
-import pl.edu.dik.ports._interface.AuthDetailsService;
 
 @Service
 @RequiredArgsConstructor
-public class AuthUserDetailsServiceImpl implements AuthDetailsService {
+public class AuthUserDetailsServiceImpl implements UserDetailsService {
 
     private final ReadAuthPort readAuthPort;
 

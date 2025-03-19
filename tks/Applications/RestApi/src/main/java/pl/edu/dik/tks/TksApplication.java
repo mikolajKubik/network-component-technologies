@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {
-		"pl.edu.dik"       // Service interfaces
+		"pl.edu.dik"
 })
 public class TksApplication {
 
@@ -16,7 +16,6 @@ public class TksApplication {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 
 	}
 }

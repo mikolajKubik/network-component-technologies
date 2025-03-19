@@ -5,6 +5,7 @@ import pl.edu.dik.domain.model.account.Account;
 import pl.edu.dik.domain.model.game.Game;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Data
 @Getter @Setter
@@ -12,6 +13,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Rent {
+
+    private UUID id;
 
     private LocalDate startDate;
 
