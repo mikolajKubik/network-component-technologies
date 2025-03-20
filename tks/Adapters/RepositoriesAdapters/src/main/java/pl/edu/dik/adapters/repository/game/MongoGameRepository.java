@@ -36,7 +36,7 @@ public class MongoGameRepository implements GameRepository {
 
 
     @Override
-    public Optional<GameEnt> findById(Object id) {
+    public Optional<GameEnt> findById(UUID id) {
         Bson filter = Filters.eq("_id", id);
         return Optional.ofNullable(collection.find(filter).first());
     }
@@ -59,7 +59,7 @@ public class MongoGameRepository implements GameRepository {
 
 
     @Override
-    public void deleteById(Object id) {
+    public void deleteById(UUID id) {
         Bson filter = eq("_id", id);
         collection.deleteOne(filter);
     }
