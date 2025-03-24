@@ -7,6 +7,7 @@ import pl.edu.dik.adapters.model.account.AccountEnt;
 import pl.edu.dik.adapters.model.game.GameEnt;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Getter @Setter
 @ToString(callSuper = true)
@@ -28,4 +29,13 @@ public class RentEnt extends AbstractEntityEnt {
 
     @BsonProperty("rental_price")
     private int rentalPrice;
+
+    public RentEnt(UUID id, LocalDate startDate, LocalDate endDate, AccountEnt account, GameEnt game, int rentalPrice) {
+        super(id);
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.account = account;
+        this.game = game;
+        this.rentalPrice = rentalPrice;
+    }
 }

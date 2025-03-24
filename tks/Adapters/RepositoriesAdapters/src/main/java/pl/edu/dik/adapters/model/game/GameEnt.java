@@ -4,6 +4,8 @@ import lombok.*;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 import pl.edu.dik.adapters.model.AbstractEntityEnt;
 
+import java.util.UUID;
+
 @Getter @Setter
 @ToString(callSuper = true)
 @NoArgsConstructor
@@ -24,4 +26,13 @@ public class GameEnt extends AbstractEntityEnt {
 
     @BsonProperty("max_players")
     private int maxPlayers;
+
+    public GameEnt(UUID id, String name, int pricePerDay, int rentalStatusCount, int minPlayers, int maxPlayers) {
+        super(id);
+        this.name = name;
+        this.pricePerDay = pricePerDay;
+        this.rentalStatusCount = rentalStatusCount;
+        this.minPlayers = minPlayers;
+        this.maxPlayers = maxPlayers;
+    }
 }

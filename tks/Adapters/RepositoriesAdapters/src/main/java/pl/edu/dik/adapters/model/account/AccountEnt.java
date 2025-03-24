@@ -4,6 +4,8 @@ import lombok.*;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 import pl.edu.dik.adapters.model.AbstractEntityEnt;
 
+import java.util.UUID;
+
 @Getter @Setter
 @ToString(callSuper = true)
 @NoArgsConstructor
@@ -31,4 +33,14 @@ public class AccountEnt extends AbstractEntityEnt {
     @BsonProperty("rental_count")
     private int rentalCount;
 
+    public AccountEnt(UUID id, String firstName, String lastName, RoleEnt role, boolean isEnable, String login, String password, int rentalCount) {
+        super(id);
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.role = role;
+        this.isEnable = isEnable;
+        this.login = login;
+        this.password = password;
+        this.rentalCount = rentalCount;
+    }
 }

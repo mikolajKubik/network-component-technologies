@@ -1,12 +1,9 @@
 package pl.edu.dik.adapters.aggregate;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
 import pl.edu.dik.adapters.model.game.GameEnt;
@@ -17,7 +14,6 @@ import java.util.Optional;
 import java.util.UUID;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -38,8 +34,7 @@ class GameRepositoryAdapterMockTest {
         gameRepositoryAdapter = new GameRepositoryAdapter(gameRepository, new ModelMapper());
 
         gameId = UUID.randomUUID();
-        gameEnt = new GameEnt("Game", 10, 0, 1, 10);
-        gameEnt.setId(gameId);
+        gameEnt = new GameEnt(gameId, "Game", 10, 0, 1, 10);
         game = new Game(gameId, "Game", 10, 0, 1, 10);
     }
 
@@ -78,10 +73,15 @@ class GameRepositoryAdapterMockTest {
     }
 
     @Test
-    void findAll() {
-    }
-
-    @Test
     void update() {
+        when(gameRepository.update(gameEnt)).thenReturn(gameEnt);
+
+        Game result = gameRepositoryAdapter.update(game);
+
+        assertThat(result)
+                .usingRecursiveComparison()
+                .isEqualTo(gameEnt);
+
+        verify(gameRepository).update(gameEnt);
     }
 }

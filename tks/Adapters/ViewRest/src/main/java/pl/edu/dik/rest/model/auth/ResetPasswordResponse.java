@@ -6,7 +6,5 @@ import lombok.Data;
 @AllArgsConstructor
 @Data
 public class ResetPasswordResponse {
-
     private String message;
-
 }
