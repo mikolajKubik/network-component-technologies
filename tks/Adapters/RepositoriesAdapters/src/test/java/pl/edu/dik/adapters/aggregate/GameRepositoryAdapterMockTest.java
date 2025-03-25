@@ -14,8 +14,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class GameRepositoryAdapterMockTest {
@@ -48,14 +47,14 @@ class GameRepositoryAdapterMockTest {
                 .usingRecursiveComparison()
                 .isEqualTo(gameEnt);
 
-        verify(gameRepository).save(gameEnt);
+        verify(gameRepository, times(1)).save(gameEnt);
     }
 
     @Test
     void deleteByIdTest() {
         gameRepositoryAdapter.deleteById(gameId);
 
-        verify(gameRepository).deleteById(gameId);
+        verify(gameRepository, times(1)).deleteById(gameId);
     }
 
     @Test
@@ -69,7 +68,7 @@ class GameRepositoryAdapterMockTest {
                 .usingRecursiveComparison()
                 .isEqualTo(gameEnt);
 
-        verify(gameRepository).findById(gameId);
+        verify(gameRepository, times(1)).findById(gameId);
     }
 
     @Test
@@ -82,6 +81,6 @@ class GameRepositoryAdapterMockTest {
                 .usingRecursiveComparison()
                 .isEqualTo(gameEnt);
 
-        verify(gameRepository).update(gameEnt);
+        verify(gameRepository, times(1)).update(gameEnt);
     }
 }

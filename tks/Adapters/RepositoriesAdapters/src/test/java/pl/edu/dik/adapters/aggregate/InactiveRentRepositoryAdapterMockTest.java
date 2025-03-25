@@ -10,19 +10,21 @@ import pl.edu.dik.adapters.repository.inactiveRent.InactiveRentRepository;
 import pl.edu.dik.domain.model.rent.Rent;
 
 import java.time.LocalDate;
+import java.util.Optional;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class InactiveRentRepositoryAdapterTest {
+class InactiveRentRepositoryAdapterMockTest {
 
     @Mock
     private InactiveRentRepository inactiveRentRepository;
     private InactiveRentRepositoryAdapter inactiveRentRepositoryAdapter;
 
     private UUID rentId;
-    private Rent rent;
     private RentEnt rentEnt;
 
     @BeforeEach
@@ -30,19 +32,23 @@ class InactiveRentRepositoryAdapterTest {
         inactiveRentRepositoryAdapter = new InactiveRentRepositoryAdapter(inactiveRentRepository, null);
 
         rentId = UUID.randomUUID();
-        rentEnt = new RentEnt();
+        rentEnt = new RentEnt(rentId, LocalDate.now(), LocalDate.now().plusDays(1), any(), any(), any());
     }
 
     @Test
     void findByIdTest() {
+        when(inactiveRentRepository.findById(rentId)).thenReturn(Optional.ofNullable(rentEnt));
 
-    }
+        Optional<Rent> result = inactiveRentRepositoryAdapter.findById(rentId);
 
-    @Test
-    void findAll() {
+        assertThat(result)
+                .isPresent();
+
+        verify(inactiveRentRepository, times(1)).findById(rentId);
     }
 
     @Test
     void getRentsByAccountId() {
+
     }
 }

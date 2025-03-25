@@ -17,10 +17,10 @@ import java.util.Optional;
 import java.util.UUID;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class AccountRepositoryAdapterTest {
+class AccountRepositoryAdapterMockTest {
 
     @Mock
     private AccountRepository accountRepository;
@@ -46,6 +46,8 @@ class AccountRepositoryAdapterTest {
         assertThat(result)
                 .usingRecursiveComparison()
                 .isEqualTo(accountEnt);
+
+        verify(accountRepository, times(1)).update(accountEnt);
     }
 
     @Test
@@ -59,6 +61,8 @@ class AccountRepositoryAdapterTest {
                 .get()
                 .usingRecursiveComparison()
                 .isEqualTo(accountEnt);
+
+        verify(accountRepository, times(1)).findById(account.getId());
     }
 
     @Test
@@ -72,6 +76,8 @@ class AccountRepositoryAdapterTest {
                 .get()
                 .usingRecursiveComparison()
                 .isEqualTo(accountEnt);
+
+        verify(accountRepository, times(1)).findByLogin(account.getLogin());
     }
 
     @Test
@@ -83,5 +89,7 @@ class AccountRepositoryAdapterTest {
         assertThat(result)
                 .usingRecursiveComparison()
                 .isEqualTo(List.of(accountEnt));
+
+        verify(accountRepository, times(1)).findByMatchingLogin(account.getLogin());
     }
 }
