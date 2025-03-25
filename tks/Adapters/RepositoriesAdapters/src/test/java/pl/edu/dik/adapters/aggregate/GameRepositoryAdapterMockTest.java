@@ -45,7 +45,7 @@ class GameRepositoryAdapterMockTest {
 
         assertThat(result)
                 .usingRecursiveComparison()
-                .isEqualTo(gameEnt);
+                .isEqualTo(game);
 
         verify(gameRepository, times(1)).save(gameEnt);
     }
@@ -66,7 +66,7 @@ class GameRepositoryAdapterMockTest {
         assertThat(result).isPresent()
                 .get()
                 .usingRecursiveComparison()
-                .isEqualTo(gameEnt);
+                .isEqualTo(game);
 
         verify(gameRepository, times(1)).findById(gameId);
     }
@@ -79,7 +79,7 @@ class GameRepositoryAdapterMockTest {
 
         assertThat(result)
                 .usingRecursiveComparison()
-                .isEqualTo(gameEnt);
+                .isEqualTo(game);
 
         verify(gameRepository, times(1)).update(gameEnt);
     }

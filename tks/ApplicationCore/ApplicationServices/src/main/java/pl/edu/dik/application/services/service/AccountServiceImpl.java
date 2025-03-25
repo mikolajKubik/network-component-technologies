@@ -49,7 +49,8 @@ public class AccountServiceImpl implements AccountService {
     }
 
     public Account toggleUserActiveStatus(UUID id, boolean isActive) throws AccountNotFoundException {
-        Account account = findAccountById(id);
+        Account account = readAccountPort.findById(id).orElseThrow(() -> new AccountNotFoundException("Account with ID " + id + " not found"));
+
         account.setEnable(isActive);
         return updateAccountPort.update(account);
     }

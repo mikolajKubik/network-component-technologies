@@ -26,6 +26,10 @@ public class GameServiceImpl implements GameService {
     private final DeleteGamePort deleteGamePort;
 
     public Game createGame(Game game) throws IncorrectPlayerNumberException {
+        if (game.getMinPlayers() < 1) {
+            throw new IncorrectPlayerNumberException("Min players cannot be less than 1");
+        }
+
         if (game.getMaxPlayers() < game.getMinPlayers()) {
             throw new IncorrectPlayerNumberException("Max players cannot be less than min players");
         }

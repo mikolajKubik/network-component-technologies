@@ -45,7 +45,7 @@ class AccountRepositoryAdapterMockTest {
 
         assertThat(result)
                 .usingRecursiveComparison()
-                .isEqualTo(accountEnt);
+                .isEqualTo(account);
 
         verify(accountRepository, times(1)).update(accountEnt);
     }
@@ -60,7 +60,7 @@ class AccountRepositoryAdapterMockTest {
                 .isPresent()
                 .get()
                 .usingRecursiveComparison()
-                .isEqualTo(accountEnt);
+                .isEqualTo(account);
 
         verify(accountRepository, times(1)).findById(account.getId());
     }
@@ -75,7 +75,7 @@ class AccountRepositoryAdapterMockTest {
                 .isPresent()
                 .get()
                 .usingRecursiveComparison()
-                .isEqualTo(accountEnt);
+                .isEqualTo(account);
 
         verify(accountRepository, times(1)).findByLogin(account.getLogin());
     }
@@ -88,7 +88,7 @@ class AccountRepositoryAdapterMockTest {
 
         assertThat(result)
                 .usingRecursiveComparison()
-                .isEqualTo(List.of(accountEnt));
+                .isEqualTo(List.of(account));
 
         verify(accountRepository, times(1)).findByMatchingLogin(account.getLogin());
     }

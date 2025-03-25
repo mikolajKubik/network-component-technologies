@@ -19,6 +19,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -49,7 +50,7 @@ class AuthRepositoryAdapterMockTest {
 
         assertThat(result)
                 .usingRecursiveComparison()
-                .isEqualTo(accountEnt);
+                .isEqualTo(account);
 
         verify(authRepository, times(1)).save(accountEnt);
     }
@@ -59,10 +60,9 @@ class AuthRepositoryAdapterMockTest {
     void saveDuplicatedKeyExceptionTest() {
         when(authRepository.save(accountEnt)).thenThrow(new DuplicatedKeyRepositoryException("Duplicated key"));
 
-        DuplicatedKeyException exception = assertThrows(DuplicatedKeyException.class, () -> {
-            authRepositoryAdapter.save(account);
-        });
-        assertEquals("Duplicated key", exception.getMessage());
+        assertThatThrownBy(() -> authRepositoryAdapter.save(account))
+                .isInstanceOf(DuplicatedKeyException.class)
+                .hasMessage("Duplicated key");
 
         verify(authRepository, times(1)).save(accountEnt);
     }
@@ -77,7 +77,7 @@ class AuthRepositoryAdapterMockTest {
                 .isPresent()
                 .get()
                 .usingRecursiveComparison()
-                .isEqualTo(accountEnt);
+                .isEqualTo(account);
 
         verify(authRepository, times(1)).findByLogin("login");
     }
