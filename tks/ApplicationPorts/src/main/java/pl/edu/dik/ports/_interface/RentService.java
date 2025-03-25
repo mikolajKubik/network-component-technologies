@@ -20,7 +20,7 @@ public interface RentService {
 
     List<Rent> getActiveRentsByClientId(UUID clientId);
 
-    public void endRent(UUID id) throws
+    void endRent(UUID id) throws
             RentNotFoundException,
             GameRentCancellationException,
             ClientRentCancellationException;
