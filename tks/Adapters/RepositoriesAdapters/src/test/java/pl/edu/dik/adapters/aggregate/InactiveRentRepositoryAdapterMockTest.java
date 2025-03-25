@@ -5,11 +5,13 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.modelmapper.ModelMapper;
 import pl.edu.dik.adapters.model.rent.RentEnt;
 import pl.edu.dik.adapters.repository.inactiveRent.InactiveRentRepository;
 import pl.edu.dik.domain.model.rent.Rent;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -29,10 +31,10 @@ class InactiveRentRepositoryAdapterMockTest {
 
     @BeforeEach
     void setUp() {
-        inactiveRentRepositoryAdapter = new InactiveRentRepositoryAdapter(inactiveRentRepository, null);
+        inactiveRentRepositoryAdapter = new InactiveRentRepositoryAdapter(inactiveRentRepository, new ModelMapper());
 
         rentId = UUID.randomUUID();
-        rentEnt = new RentEnt(rentId, LocalDate.now(), LocalDate.now().plusDays(1), any(), any(), any());
+        rentEnt = new RentEnt(rentId, LocalDate.now(), LocalDate.now().plusDays(1), null, null, 100);
     }
 
     @Test
@@ -49,6 +51,13 @@ class InactiveRentRepositoryAdapterMockTest {
 
     @Test
     void getRentsByAccountId() {
+        UUID accountId = UUID.randomUUID();
+        when(inactiveRentRepository.getRentsByAccountId(accountId)).thenReturn(List.of(rentEnt));
 
+        List<Rent> result = inactiveRentRepositoryAdapter.getRentsByAccountId(accountId);
+
+        assertThat(result).isNotNull();
+
+        verify(inactiveRentRepository, times(1)).getRentsByAccountId(accountId);
     }
 }
