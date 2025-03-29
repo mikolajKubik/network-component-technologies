@@ -6,7 +6,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
+import org.testcontainers.containers.DockerComposeContainer;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
+import java.io.File;
 import java.util.UUID;
 
 import static io.restassured.RestAssured.given;
@@ -15,7 +19,25 @@ import static io.restassured.RestAssured.given;
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
         classes = TksApplication.class
 )
+@Testcontainers
 public class InactiveRentControllerTest {
+
+    @Container
+    static final DockerComposeContainer<?> container = new DockerComposeContainer<>(new File("/Users/mikson/Projects/STUDIA_VI_sem/MKWA_SR_1015_07/tks/docker-compose.yml"))
+            .withLocalCompose(true);
+
+    static {
+        // Start the container
+        container.start();
+
+        try {
+            // Wait for 120 seconds for the MongoDB cluster to warm up
+            Thread.sleep(70000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new RuntimeException("Container startup wait was interrupted", e);
+        }
+    }
 
     @LocalServerPort
     private int port;

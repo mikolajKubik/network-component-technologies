@@ -11,11 +11,11 @@ import org.springframework.context.annotation.ComponentScan;
 public class TksApplication {
 
 	public static void main(String[] args) {
-		try {
+//		try {
 			SpringApplication.run(TksApplication.class, args);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 
 	}
 }
