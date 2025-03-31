@@ -6,6 +6,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.test.context.ContextConfiguration;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.util.UUID;
 
@@ -15,6 +17,8 @@ import static io.restassured.RestAssured.given;
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
         classes = TksApplication.class
 )
+@Testcontainers
+@ContextConfiguration(classes = TestContainerConfig.class)
 public class InactiveRentControllerTest {
 
     @LocalServerPort
