@@ -1,0 +1,32 @@
+volumes:
+  mongo1-data:
+
+services:
+  mongo1:
+    image: mongo:8.0.1
+    #    container_name: mongo_2
+    hostname: mongo1
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo1-data:/data/db
+#      - mongo-rs-key:/etc/mongodb/pki
+    command: ["--replSet", "rs0", "--bind_ip_all", "--port", "27017"]
+    restart: unless-stopped
+#    depends_on:
+#      mongo1:
+#        condition: service_healthy
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mongosh",
+          "127.0.0.1:27017",
+          "--eval",
+          "db.adminCommand('ping')",
+        ]
+      interval: 10s
+      timeout: 2s
+      retries: 5

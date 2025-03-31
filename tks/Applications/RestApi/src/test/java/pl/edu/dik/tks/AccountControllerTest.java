@@ -7,10 +7,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.testcontainers.containers.DockerComposeContainer;
+import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.io.File;
+import java.time.Duration;
 import java.util.UUID;
 
 import static io.restassured.RestAssured.given;
@@ -23,22 +25,41 @@ import static org.hamcrest.Matchers.*;
 @Testcontainers
 public class AccountControllerTest {
 
-//    @Container
-//    static final DockerComposeContainer<?> container = new DockerComposeContainer<>(new File("/Users/mikson/Projects/STUDIA_VI_sem/MKWA_SR_1015_07/tks/docker-compose.yml"))
-//            .withLocalCompose(true);
-//
-//    static {
-//        // Start the container
-//        container.start();
-//
-//        try {
-//            // Wait for 120 seconds for the MongoDB cluster to warm up
-//            Thread.sleep(70000);
-//        } catch (InterruptedException e) {
-//            Thread.currentThread().interrupt();
-//            throw new RuntimeException("Container startup wait was interrupted", e);
-//        }
-//    }
+    private static final int MONGO_PORT = 27017;
+
+    @Container
+    static final GenericContainer<?> mongoContainer = new GenericContainer<>("mongo:8.0.1")
+            .withExposedPorts(MONGO_PORT)
+            .withCommand(
+                    "--replSet", "rs0",
+                    "--bind_ip_all"
+            )
+            .withStartupTimeout(Duration.ofMinutes(2));
+
+    static {
+        mongoContainer.start();
+
+        try {
+            // Initialize replica set using container's internal hostname
+            org.testcontainers.containers.Container.ExecResult initResult = mongoContainer.execInContainer(
+                    "mongosh", "--eval",
+                    "rs.initiate({_id: 'rs0', members: [{_id: 0, host: 'localhost:" + MONGO_PORT + "'}]})"
+            );
+
+            System.out.println("Replica set initialization: " + initResult.getStdout());
+
+            // Wait for replica set to initialize
+            Thread.sleep(5000);
+
+            // Set Spring property that matches your MongoConfig class
+            System.setProperty("mongodb.connection.uri",
+                    "mongodb://" + mongoContainer.getHost() + ":" +
+                            mongoContainer.getMappedPort(MONGO_PORT) + "/?replicaSet=rs0&directConnection=true");
+
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to initialize MongoDB replica set", e);
+        }
+    }
 
     @LocalServerPort
     private int port;
